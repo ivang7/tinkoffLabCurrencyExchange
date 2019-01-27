@@ -34,7 +34,8 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toEndOf="@+id/spinCurFrom"
-        app:layout_constraintTop_toTopOf="@+id/spinCurFrom" />
+        app:layout_constraintTop_toTopOf="@+id/spinCurFrom"
+        android:autofillHints="0.0" />
 
     <TextView
         android:id="@+id/textLabelTo"
@@ -66,6 +67,7 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toEndOf="@+id/spinCurTo"
-        app:layout_constraintTop_toTopOf="@+id/spinCurTo" />
+        app:layout_constraintTop_toTopOf="@+id/spinCurTo"
+        android:autofillHints="0.0" />
 
 </android.support.constraint.ConstraintLayout>
