@@ -91,27 +91,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         thread.start();
-
-        // ---
-
-
-//        Float valueTo = 0.0f;
-//
-//        if (currencyFrom.equals(currencyTo)) {
-//            valueTo = valueFrom;
-//        } else {
-//            valueTo = 100.81f;
-//        }
-//
-//        String valueToString;
-//        if(valueTo == Math.round(valueTo)){
-//            valueToString = String.valueOf(Math.round(valueTo));
-//        } else
-//        {
-//            valueToString = String.valueOf(valueTo);
-//        }
-//
-//        targetEdit.setText(valueToString);
     }
 
     private void AddSpinnerHandler(Spinner spin){
@@ -119,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(view != null && parent != null) {
-                    Convert(parent.equals(spinnerFrom));
+                    Convert(lastEditValueCurrencyFrom);
                 }
             }
 
@@ -131,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void AddEditTextHandler(final EditText editText){
         //final boolean directionConvertation = editText.equals(editBoxFrom);
-
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
