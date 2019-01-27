@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="currency_array">
+    <item>RUB</item>
+    <item>USD</item>
+    <item>EUR</item>
+    <item>GBP</item>
+    <item>ALL</item>
+    <item>XCD</item>
+    <item>BBD</item>
+    <item>BTN</item>
+    <item>BND</item>
+    <item>XAF</item>
+    <item>CUP</item>
+</string-array>
+</resources>
