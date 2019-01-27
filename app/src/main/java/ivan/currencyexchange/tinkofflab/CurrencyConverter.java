@@ -1,5 +1,6 @@
 package ivan.currencyexchange.tinkofflab;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -55,7 +56,7 @@ public class CurrencyConverter {
         });
     }
 
-    public static float Convert(String from, String to, float value, Context context) {
+    public static float Convert(String from, String to, float value, final Context context) {
         boolean online = isOnline(context);
         Float result = value;
 
@@ -85,7 +86,13 @@ public class CurrencyConverter {
                 float toPref = prefs.getFloat(to, -1.0f);
 
                 if (fromPref == -1.0f || toPref == -1.0f) {
-                    Toast.makeText(context, "Нет интернет соединения и нет сохранненых курсов, невозможно конвертировать.", Toast.LENGTH_LONG).show();
+                    ((Activity)context).runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(context, "Нет интернет соединения и нет сохранненых курсов, невозможно конвертировать.", Toast.LENGTH_LONG).show();
+                        }
+                    });
+
                     return 0.0f;
                 }
 
@@ -107,7 +114,7 @@ public class CurrencyConverter {
                 result /= rate;
             else
                 result *= rate;
-            }
+        }
 
         if (editor != null) editor.apply();
 
